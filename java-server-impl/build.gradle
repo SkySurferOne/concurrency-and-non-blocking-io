@@ -12,6 +12,10 @@ repositories {
 }
 
 dependencies {
-    compile group: 'io.netty', name: 'netty-all', version: '4.1.44.Final'
+    // We don't need it as reactor netty already provides netty dependencies
+    // compile group: 'io.netty', name: 'netty-all', version: '4.1.44.Final'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "io.projectreactor.netty:reactor-netty-core:1.0.13"
+    compile "io.projectreactor.netty:reactor-netty-http:1.0.13"
+    runtimeOnly "ch.qos.logback:logback-classic:1.2.7"
 }
