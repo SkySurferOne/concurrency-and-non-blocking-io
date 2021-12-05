@@ -5,7 +5,7 @@ import java.net.Socket;
 
 public class TrafficGenerator {
     public static void main(String[] args) throws InterruptedException {
-        int connectionNumber = 6000;
+        int connectionNumber = 3000;
         for (int i = 0; i < connectionNumber; i++) {
             try {
                 new Socket("localhost", 8080);

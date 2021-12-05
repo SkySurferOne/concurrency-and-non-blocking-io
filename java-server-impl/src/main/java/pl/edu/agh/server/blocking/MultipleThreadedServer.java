@@ -15,7 +15,8 @@ public class MultipleThreadedServer {
         while (true) {
             Socket s = ss.accept(); // blocking call - never returns null
 
-            // We will got out of memory exception, also there will be a lot of context switching
+            // We will get out of memory exception, also there will be a lot of context switching
+            // We can run out of file descriptors also
             new Thread(() -> Util.process(s)).start();
         }
     }
