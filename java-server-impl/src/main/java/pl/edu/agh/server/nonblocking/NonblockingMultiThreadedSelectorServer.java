@@ -87,6 +87,7 @@ public class NonblockingMultiThreadedSelectorServer {
 
         pool.submit(() -> {
             buf.flip(); // buf.limit(buf.position()).position(0)
+            // Thread.sleep(1000); // laggy dependency simulation
             for (int i = 0; i < buf.limit(); i++) {
                 buf.put(i, (byte) Util.transmogrify(buf.get(i)));
             }
