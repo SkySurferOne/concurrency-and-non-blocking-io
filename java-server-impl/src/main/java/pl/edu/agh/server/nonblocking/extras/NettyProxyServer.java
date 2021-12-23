@@ -78,9 +78,9 @@ public class NettyProxyServer {
 
             connectFuture.addListener((ChannelFutureListener) channelFuture -> {
                 if (channelFuture.isSuccess()) {
-                    logger.debug("Connection completed");
+                    logger.debug("From callback: Connection completed ");
                 } else {
-                    logger.debug("Connection attempt failed");
+                    logger.debug("From callback: Connection attempt failed");
                     channelFuture.cause().printStackTrace();
                 }
             });

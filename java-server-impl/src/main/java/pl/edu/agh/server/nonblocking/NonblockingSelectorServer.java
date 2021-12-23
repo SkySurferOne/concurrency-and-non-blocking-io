@@ -73,7 +73,7 @@ public class NonblockingSelectorServer {
         SocketChannel sc = (SocketChannel) key.channel();
 
         ByteBuffer buf = ByteBuffer.allocateDirect(1024);
-        int read = sc.read(buf);
+        int read = sc.read(buf); // non blocking
 
         if (read == -1) {
             pendingData.remove(sc);
